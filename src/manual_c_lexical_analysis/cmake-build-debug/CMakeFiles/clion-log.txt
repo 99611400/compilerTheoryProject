@@ -1,0 +1,4 @@
+"D:\EnglishSoftware\clion\CLion 2020.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" F:\project\github\unfinished\compilerTheoryProject\src\manual_c_lexical_analysis
+-- Configuring done
+-- Generating done
+-- Build files have been written to: F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug

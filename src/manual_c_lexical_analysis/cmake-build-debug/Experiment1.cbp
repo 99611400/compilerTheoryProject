@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Experiment1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Experiment1">
+				<Option output="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Experiment1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 Experiment1"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Experiment1/fast">
+				<Option output="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Experiment1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 Experiment1/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/Parser.cpp">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/Parser.h">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/main.cpp">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/BlankWord.cpp">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/BlankWord.h">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/Double.cpp">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/Double.h">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/Identifier.cpp">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/Identifier.h">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/Operator.cpp">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/Operator.h">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/ReservedWord.cpp">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/ReservedWord.h">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/Separator.cpp">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/Separator.h">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/UnsignedInteger.cpp">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/UnsignedInteger.h">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/Word.cpp">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/word/Word.h">
+			<Option target="Experiment1"/>
+		</Unit>
+		<Unit filename="F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

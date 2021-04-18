@@ -1,0 +1,3 @@
+F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/CMakeFiles/Experiment1.dir
+F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/CMakeFiles/edit_cache.dir
+F:/project/github/unfinished/compilerTheoryProject/src/manual_c_lexical_analysis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
