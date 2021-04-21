@@ -5,5 +5,8 @@ class BinOpNode(object):
         self.op_token = op_token
         self.right_node = right_node
 
+        self.pos_start = self.left_node.pos_start
+        self.pos_end = self.right_node.pos_end
+
     def __repr__(self):
         return f'({self.left_node}, {self.op_token}, {self.right_node})'

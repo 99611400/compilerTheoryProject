@@ -17,10 +17,9 @@ class Parser(object):
             self.current_token = self.tokens[self.token_idx]
         return self.current_token
 
-
     def parse(self):
         res = self.expr()
-        if not res.error and   self.current_token.type != TT_EOF:
+        if not res.error and self.current_token.type != TT_EOF:
             # 返回报错
             return res.failure(InvalidSyntaxError(
                 self.current_token.pos_start, self.current_token.pos_end,
@@ -70,19 +69,20 @@ class Parser(object):
                 'expected  int or float '
             ))
 
-
     """
     term -> factor((MUL | DIV) factor)*
     """
+
     def term(self):
         #  term -> factor((MUL | DIV) factor)*
-        return self.bin_op(self.factor, (TT_MUL,TT_DIV))
+        return self.bin_op(self.factor, (TT_MUL, TT_DIV))
 
     """
     expr -> term ((PLUS | MINUS) term)*
     """
+
     def expr(self):
-        return self.bin_op(self.term,(TT_PLUS,TT_MINUS))
+        return self.bin_op(self.term, (TT_PLUS, TT_MINUS))
 
     def bin_op(self, func, ops):
         # 递归调用 构建出AST
@@ -92,7 +92,7 @@ class Parser(object):
             op_token = self.current_token
             res.register(self.advance())
             right = res.register(func())
-            left = BinOpNode(left,op_token,right)
+            left = BinOpNode(left, op_token, right)
         return res.success(left)
 
 
@@ -110,7 +110,7 @@ class ParserResult(object):
         return self
 
     def register(self, res):
-        if isinstance(res,ParserResult):
+        if isinstance(res, ParserResult):
             if res.error:
                 self.error = res.error
             return res.node
