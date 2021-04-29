@@ -1,6 +1,7 @@
 int main() {
     int a,b;
-    int c=100;
+    int c=100aa21;
     double r=1;
     int d=a+b;
+    int abc;
 }

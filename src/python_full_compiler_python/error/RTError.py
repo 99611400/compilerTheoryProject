@@ -6,6 +6,7 @@ class RTError(Error):
     def __init__(self, pos_start, pos_end, detail, context):
         super().__init__(pos_start, pos_end, "Runtime Error", detail)
         self.context = context
+
     def as_string(self):
         result = self.generate_traceStack()
         result = f'{self.error_name}:{self.details}'
@@ -17,7 +18,7 @@ class RTError(Error):
         生成错误栈信息
         :return:
         """
-        result  = ''
+        result = ''
         pos = self.pos_start
         ctxt = self.context
         while ctxt:

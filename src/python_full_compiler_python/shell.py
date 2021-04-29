@@ -8,7 +8,6 @@ fromFile = False
 
 
 def run(fn, text):
-
     #  词法解析
     lexer = Lexer(fn, text)
     tokens, error = lexer.make_tokens()
@@ -25,6 +24,7 @@ def run(fn, text):
     result = interpreter.visit(ast.node, context)
 
     return result.value, result.error
+    # return ast.node,ast.error
 
 
 if not fromFile:

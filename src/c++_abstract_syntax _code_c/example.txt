@@ -1,0 +1,8 @@
+( ) i + *
+E A T B F
+E->TA
+A->+TA|@
+T->FB
+B->*FB|@
+F->(E)|i
+end

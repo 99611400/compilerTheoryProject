@@ -84,13 +84,13 @@ class Interpreter(object):
         :return:
         """
         method_name = f"visit_{type(node).__name__}"
-        method = getattr(self, method_name, self.visit_numberNode)
+        method = getattr(self, method_name, self.no_visit_method)
         return method(node, context)
 
     def no_visit_method(self):
         raise Exception(f"visit_{type(node).__name__}")
 
-    def visit_numberNode(self, node, context):
+    def visit_NumberNode(self, node, context):
         return RTResult().success(
             # token 的 value
             Number(node.token.value).set_context(context).set_pos(node.pos_start, node.pos_end)
@@ -122,7 +122,7 @@ class Interpreter(object):
         else:
             return res.success(result.set_pos(node.pos_start, node.pos_end))
 
-    def UnaryOpNode(self, node, context):
+    def visit_UnaryOpNode(self, node, context):
         res = RTResult()
         number = res.register(self.visit(node.node, context))
         if res.error:

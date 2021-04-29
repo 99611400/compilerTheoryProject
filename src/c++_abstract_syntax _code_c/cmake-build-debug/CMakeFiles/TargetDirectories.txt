@@ -1,0 +1,5 @@
+F:/project/github/unfinished/compilerTheoryProject/c++_abstract_syntax _code_c/cmake-build-debug/CMakeFiles/abc.dir
+F:/project/github/unfinished/compilerTheoryProject/c++_abstract_syntax _code_c/cmake-build-debug/CMakeFiles/example.dir
+F:/project/github/unfinished/compilerTheoryProject/c++_abstract_syntax _code_c/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+F:/project/github/unfinished/compilerTheoryProject/c++_abstract_syntax _code_c/cmake-build-debug/CMakeFiles/test.dir
+F:/project/github/unfinished/compilerTheoryProject/c++_abstract_syntax _code_c/cmake-build-debug/CMakeFiles/edit_cache.dir

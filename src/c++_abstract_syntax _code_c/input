@@ -1,0 +1,8 @@
+( ) id + *
+E E' T T' F
+E->TE'
+E'->+TE'|@
+T->FT'
+T'->*FT'|@
+F->(E)|id
+end

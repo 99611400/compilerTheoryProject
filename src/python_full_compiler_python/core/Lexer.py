@@ -1,7 +1,7 @@
 from core.Position import Position
 from core.ConstDefine import *
 from error.IllegalCharError import IllegalCharError
-from Token import Token
+from core.Token import Token
 
 class Lexer(object):
     def __init__(self, fn, text):
