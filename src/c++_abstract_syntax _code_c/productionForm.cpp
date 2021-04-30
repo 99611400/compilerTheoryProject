@@ -47,6 +47,10 @@ std::vector<std::vector<std::string>>* productionForm::getRight() {
     return right;
 }
 
+productionForm::~productionForm() {
+
+}
+
 
 
 

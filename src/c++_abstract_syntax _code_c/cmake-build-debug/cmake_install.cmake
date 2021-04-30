@@ -1,4 +1,4 @@
-# Install script for directory: F:/project/github/unfinished/compilerTheoryProject/c++_abstract_syntax _code_c
+# Install script for directory: F:/project/github/unfinished/compilerTheoryProject/src/c++_abstract_syntax _code_c
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "F:/project/github/unfinished/compilerTheoryProject/c++_abstract_syntax _code_c/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "F:/project/github/unfinished/compilerTheoryProject/src/c++_abstract_syntax _code_c/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -62,10 +62,10 @@ RM = "D:\EnglishSoftware\clion\CLion 2020.3\bin\cmake\win\bin\cmake.exe" -E rm -
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c"
+CMAKE_SOURCE_DIR = "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\cmake-build-debug"
+CMAKE_BINARY_DIR = "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/abc.dir/depend.make
@@ -78,42 +78,42 @@ include CMakeFiles/abc.dir/flags.make
 
 CMakeFiles/abc.dir/productionForm.cpp.obj: CMakeFiles/abc.dir/flags.make
 CMakeFiles/abc.dir/productionForm.cpp.obj: ../productionForm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/abc.dir/productionForm.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\abc.dir\productionForm.cpp.obj -c "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\productionForm.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/abc.dir/productionForm.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\abc.dir\productionForm.cpp.obj -c "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\productionForm.cpp"
 
 CMakeFiles/abc.dir/productionForm.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/abc.dir/productionForm.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\productionForm.cpp" > CMakeFiles\abc.dir\productionForm.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\productionForm.cpp" > CMakeFiles\abc.dir\productionForm.cpp.i
 
 CMakeFiles/abc.dir/productionForm.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/abc.dir/productionForm.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\productionForm.cpp" -o CMakeFiles\abc.dir\productionForm.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\productionForm.cpp" -o CMakeFiles\abc.dir\productionForm.cpp.s
 
 CMakeFiles/abc.dir/LL1.cpp.obj: CMakeFiles/abc.dir/flags.make
 CMakeFiles/abc.dir/LL1.cpp.obj: ../LL1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/abc.dir/LL1.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\abc.dir\LL1.cpp.obj -c "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\LL1.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/abc.dir/LL1.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\abc.dir\LL1.cpp.obj -c "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\LL1.cpp"
 
 CMakeFiles/abc.dir/LL1.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/abc.dir/LL1.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\LL1.cpp" > CMakeFiles\abc.dir\LL1.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\LL1.cpp" > CMakeFiles\abc.dir\LL1.cpp.i
 
 CMakeFiles/abc.dir/LL1.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/abc.dir/LL1.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\LL1.cpp" -o CMakeFiles\abc.dir\LL1.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\LL1.cpp" -o CMakeFiles\abc.dir\LL1.cpp.s
 
 CMakeFiles/abc.dir/main.cpp.obj: CMakeFiles/abc.dir/flags.make
 CMakeFiles/abc.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/abc.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\abc.dir\main.cpp.obj -c "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/abc.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\abc.dir\main.cpp.obj -c "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\main.cpp"
 
 CMakeFiles/abc.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/abc.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\main.cpp" > CMakeFiles\abc.dir\main.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\main.cpp" > CMakeFiles\abc.dir\main.cpp.i
 
 CMakeFiles/abc.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/abc.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\main.cpp" -o CMakeFiles\abc.dir\main.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\main.cpp" -o CMakeFiles\abc.dir\main.cpp.s
 
 # Object files for target abc
 abc_OBJECTS = \
@@ -131,7 +131,7 @@ abc.exe: CMakeFiles/abc.dir/build.make
 abc.exe: CMakeFiles/abc.dir/linklibs.rsp
 abc.exe: CMakeFiles/abc.dir/objects1.rsp
 abc.exe: CMakeFiles/abc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable abc.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable abc.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\abc.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -144,6 +144,6 @@ CMakeFiles/abc.dir/clean:
 .PHONY : CMakeFiles/abc.dir/clean
 
 CMakeFiles/abc.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c" "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c" "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\cmake-build-debug" "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\cmake-build-debug" "F:\project\github\unfinished\compilerTheoryProject\c++_abstract_syntax _code_c\cmake-build-debug\CMakeFiles\abc.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c" "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c" "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\cmake-build-debug" "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\cmake-build-debug" "F:\project\github\unfinished\compilerTheoryProject\src\c++_abstract_syntax _code_c\cmake-build-debug\CMakeFiles\abc.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/abc.dir/depend
 

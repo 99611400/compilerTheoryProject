@@ -1,8 +1,9 @@
-( ) id + *
+( ) i + - * /
 E E' T T' F
-E->TE'
-E'->+TE'|@
-T->FT'
-T'->*FT'|@
-F->(E)|id
+E=>TE'
+E'=>+TE'|-TE'|@
+T=>FT'
+T'=>*FT'|/FT'|@
+F=>(E)|i|+i|-i
 end
+((i+i*(i+i)))$

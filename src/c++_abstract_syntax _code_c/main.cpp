@@ -8,6 +8,5 @@
 
 int main(){
     LL1 *ll1 = new LL1("../input");
-    ll1->printAll();
     return 0;
 }
