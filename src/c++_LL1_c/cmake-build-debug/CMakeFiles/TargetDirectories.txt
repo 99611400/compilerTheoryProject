@@ -1,0 +1,4 @@
+F:/project/github/unfinished/compilerTheoryProject/src/c++_LL1_c/cmake-build-debug/CMakeFiles/abc.dir
+F:/project/github/unfinished/compilerTheoryProject/src/c++_LL1_c/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+F:/project/github/unfinished/compilerTheoryProject/src/c++_LL1_c/cmake-build-debug/CMakeFiles/test.dir
+F:/project/github/unfinished/compilerTheoryProject/src/c++_LL1_c/cmake-build-debug/CMakeFiles/edit_cache.dir
