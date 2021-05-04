@@ -67,6 +67,26 @@ public class ProductionForm {
         return p;
     }
 
+    ProductionForm removeSpot(){
+        String rightStr = this.right;
+        int locationOfSpotInString = rightStr.indexOf(SPOT);
+        StringBuffer temp = new StringBuffer(rightStr);
+        temp.deleteCharAt(locationOfSpotInString);
+
+        ArrayList<String> cloneRightArrayList = (ArrayList<String>) getRightList().clone();
+        int locationOfSpotInArraylist = cloneRightArrayList.indexOf(SPOT);
+        cloneRightArrayList.remove(locationOfSpotInArraylist);
+        ProductionForm p = new ProductionForm(this.getLeft(),temp.toString(),cloneRightArrayList);
+        return p;
+    }
+
+    String FullStringAfterRemoveSpot(){
+        StringBuffer temp = new StringBuffer(fullString);
+        int locationOfSpot = fullString.indexOf(SPOT);
+        temp.deleteCharAt(locationOfSpot);
+        return temp.toString();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -12,8 +12,15 @@ public class LR0 {
     private static final String END = "$";
 
 
+    private int acceptNodeNumber;
     private String tobeResolvedInput;  // 存储要解析的字符串
     private ProductionForm startProductionForm;
+    private final Set<ProductionForm> reduceProductionFormSet;
+    ArrayList<String> lr0TableHeadList;
+    String[][] lr0Table;
+    ArrayList<ProductionForm> productionFormList;
+    ArrayList<ParseStatus> parseStatusArrayList;
+
 
     private final Vector<String> mergeTerAndNoneVector; // 合并终结符符和非终结符的Vector
     private final HashSet<String> terminatorSet;  // 终结符的set
@@ -49,11 +56,13 @@ public class LR0 {
             for(ProductionForm  p:ISet){
                 ArrayList<String> pRightList = p.getRightList();
                 int locationOfSpot = pRightList.indexOf(SPOT);
+                // 如果当前没越界 且点后边的token是非终结符 那么 需要 将这个字符加入到afterSpotNonTerminatorSet中
                 if(locationOfSpot +1 <pRightList.size() && noneTerminatorSet.contains(pRightList.get(locationOfSpot+1))){
                     afterSpotNonTerminatorSet.add(pRightList.get(locationOfSpot+1));
                 }
             }
-
+            // 如果存在 afterSpotNonTerminatorSet 中的元素是 某一产生式的左侧 那么 这个产生式需要加入到CLOSURE闭包中
+            // 比如  求 E->･S 的闭包   而且还知道  S->BB   上边的for循环找到了点后边的非终结符 S 那么S ->･BB 也应该加入到闭包中 以此类推 B->･xxxxxx也应该添加
             for(ProductionForm p:productionFormSet){
                 if(afterSpotNonTerminatorSet.contains(p.getLeft())){
                     ISet.add(p.insertSpot());
@@ -81,8 +90,12 @@ public class LR0 {
                         nextINodeProductionFormSet.add(p.rightMoveSpotOneStep());
                         currentINodeEdgeMap.put(afterSpotToken,nextINodeProductionFormSet);
                     }else {
+                        // 这种情况是可能存在的 比如 当前currentNodeProductionFormSet 是 S->･AA S->･AB
                         nextINodeProductionFormSet.add(p.rightMoveSpotOneStep());
                     }
+                }else if(locationOfSpot + 1 == rightArrayList.size()) {
+                    //这说明 到达了临终节点  比如 B->BB･ A->a･  等等
+                    reduceProductionFormSet.add(p);
                 }
             }
 
@@ -91,11 +104,14 @@ public class LR0 {
             for(String currentINodeEdgeMapKey:currentINodeEdgeMap.keySet()){
                 nextINodeProductionFormSet = currentINodeEdgeMap.get(currentINodeEdgeMapKey);
                 calculationCLOSURE(nextINodeProductionFormSet);
-
                 int j = INodeList.indexOf(nextINodeProductionFormSet);
                 if(j == -1){
                     unfinishedQueue.add(nextINodeProductionFormSet);
                     INodeList.add(nextINodeProductionFormSet);
+                    if(nextINodeProductionFormSet.size() ==1 &&
+                            nextINodeProductionFormSet.contains(startProductionForm.insertSpot().rightMoveSpotOneStep())){
+                        acceptNodeNumber = INodeList.size() -1;
+                    }
                     j = INodeList.size() - 1;
                 }
                 IEdgeList.add(new StateNode(i,currentINodeEdgeMapKey,j));
@@ -118,9 +134,7 @@ public class LR0 {
                 if(i==0){
                     String[] noneTerminatorStrArray = lineString.split(" ");
                     terminatorSet.addAll(Arrays.asList(noneTerminatorStrArray));
-                    terminatorSet.add(SPOT);
-                    terminatorSet.add(NONE);
-                    terminatorSet.add(END);
+
                 }else if(i==1) {
                     String[] terminatorStrArray = lineString.split(" ");
                     noneTerminatorSet.addAll(Arrays.asList(terminatorStrArray));
@@ -132,6 +146,9 @@ public class LR0 {
                     if(i ==2){
                         mergeTerAndNoneVector.addAll(noneTerminatorSet);
                         mergeTerAndNoneVector.addAll(terminatorSet);
+                        mergeTerAndNoneVector.add(SPOT);
+                        mergeTerAndNoneVector.add(NONE);
+                        mergeTerAndNoneVector.add(END);
                         mergeTerAndNoneVector.sort((o1, o2) -> {
                             if (o1.length() < o2.length()){
                                 return 1;
@@ -180,21 +197,145 @@ public class LR0 {
         noneTerminatorSet = new HashSet<>();
         productionFormSet = new HashSet<>();
         mergeTerAndNoneVector = new Vector<>();
-
+        reduceProductionFormSet = new HashSet<>();
         INodeList = new ArrayList<Set<ProductionForm>>(); // 节点的集合 里边的一个Set<ProductionForm> 的所有产生式都是同状态的
         IEdgeList = new ArrayList<StateNode>();  //  状态到状态转变 这个list维护了一个节点到另一个节点边的信息
-
         getInputFromFile(path);
-
         Set<ProductionForm> startStateSet = new HashSet<>(); // 开始集的set 里边
         startStateSet.add(new ProductionForm(startProductionForm.getLeft(),SPOT+startProductionForm.getRight(),splitByTerminatorAndNoneTer(SPOT+startProductionForm.getRight())));
         calculationCLOSURE(startStateSet);
         // 第一个节点是 计算了起始产生式的闭包后  得到的set  内容是 startStateSet
         INodeList.add(startStateSet);
+        // calculationAllCLOSURE 会根据INodeList中的内容计算所有的闭包  直至所有的状态被求出来 而且 IEdgeList还会存储不同状态集之间的关系
         calculationAllCLOSURE();
-        int a = 0;
+        createLR0Table();
+        parseToken();
     }
 
+    private void parseToken() {
+         parseStatusArrayList = new ArrayList<>();
+        /*
+        0
+        #     baaaaaab$
+        */
+
+
+        LinkedList<Integer> startStatusStack = new LinkedList<>();
+        startStatusStack.add(0);
+        LinkedList<String> symbolStack = new LinkedList<>();
+        symbolStack.add("$");
+        LinkedList<String> leftTokenStack = new LinkedList<>();
+        leftTokenStack.addAll(splitByTerminatorAndNoneTer(tobeResolvedInput));
+        ParseStatus singleParseStatus = new ParseStatus(startStatusStack,symbolStack,leftTokenStack);
+        while (singleParseStatus != null){
+            parseStatusArrayList.add(singleParseStatus);
+            singleParseStatus = getSingleParseStatus();
+        }
+
+
+    }
+
+    private ParseStatus getSingleParseStatus() {
+        ParseStatus currentParseStatus = parseStatusArrayList.get(parseStatusArrayList.size() - 1);
+        String nextInstruct = "";
+        String next = "";
+        Integer jumpNumber =-1;
+
+        LinkedList<Integer> startStatusStack = null;
+        LinkedList<String> symbolStack = null;
+        LinkedList<String> leftTokenStack = null;
+
+        startStatusStack = new LinkedList<>();
+        startStatusStack.addAll(currentParseStatus.getStatusStack());
+        symbolStack = new LinkedList<>();
+        symbolStack.addAll(currentParseStatus.getSymbolStack());
+        leftTokenStack = new LinkedList<>();
+        leftTokenStack.addAll(currentParseStatus.getLeftTokenStack());
+        if(currentParseStatus.getStatusStack().size() == currentParseStatus.getSymbolStack().size()){
+            nextInstruct = lr0Table[currentParseStatus.getStatusStack().getLast()][lr0TableHeadList.indexOf(currentParseStatus.getLeftTokenStack().getFirst())];
+            if(nextInstruct == "acc"){
+                return null;
+            }
+            if(nextInstruct == null)
+                return null;
+
+            next = nextInstruct.substring(0,1);
+            jumpNumber = Integer.parseInt(nextInstruct.substring(1,2));
+            if(next.equals("s")){
+                startStatusStack.add(jumpNumber);
+                symbolStack.add(leftTokenStack.getFirst());
+                leftTokenStack.remove(0);
+            }else if(next.equals("r")){
+                ProductionForm currentProductionForm = productionFormList.get(jumpNumber);
+                for(String ele:currentProductionForm.getRightList()){
+                    startStatusStack.remove(startStatusStack.size()-1);
+                    symbolStack.remove(symbolStack.size()-1);
+                }
+                symbolStack.add(currentProductionForm.getLeft());
+            }
+            return new ParseStatus(startStatusStack,symbolStack,leftTokenStack);
+        }else {
+            nextInstruct = lr0Table[currentParseStatus.getStatusStack().getLast()][lr0TableHeadList.indexOf(currentParseStatus.getSymbolStack().getLast())];
+            jumpNumber = Integer.parseInt(nextInstruct);
+            startStatusStack.add(jumpNumber);
+            return new ParseStatus(startStatusStack,symbolStack,leftTokenStack);
+        }
+    }
+
+    private Boolean createLR0Table() {
+        lr0TableHeadList = new ArrayList<>();
+        productionFormList = new ArrayList<>();
+        productionFormList.addAll(productionFormSet);
+        lr0TableHeadList.addAll(terminatorSet);
+        lr0TableHeadList.add("$");
+        lr0TableHeadList.addAll(noneTerminatorSet);
+        lr0TableHeadList.remove(startProductionForm.getLeft());
+
+        // 创建goto表
+        int[][] gotoTable = new int[INodeList.size()][lr0TableHeadList.size()];
+        lr0Table = new String[INodeList.size()][lr0TableHeadList.size()];
+        for(int i = 0 ;i<IEdgeList.size();i++){
+            StateNode currentEdge = IEdgeList.get(i);
+            int locationLr0TableHead= lr0TableHeadList.indexOf(currentEdge.getPassBy());
+            int currentNodeNumber = currentEdge.getOriginalState();
+            if(gotoTable[currentNodeNumber][locationLr0TableHead] == 0){
+                gotoTable[currentNodeNumber][locationLr0TableHead] = currentEdge.getTarget();
+            }else {
+                return false;
+            }
+        }
+
+
+        //填写action表
+        for(int i =0;i<INodeList.size();i++ ){
+            Set<ProductionForm> currentNode = INodeList.get(i);
+            if(i == acceptNodeNumber){
+                lr0Table[i][terminatorSet.size()] = "acc";
+            }
+            for(int j=0;j<lr0TableHeadList.size();j++){
+                if(gotoTable[i][j] != 0 ) {
+                    if(j < terminatorSet.size() + 1){
+                        lr0Table[i][j] = "s" + gotoTable[i][j];
+                    }else if(j >= terminatorSet.size() + 1){
+                        lr0Table[i][j] =gotoTable[i][j] + "";
+                    }
+                    continue;
+                }
+
+                if(currentNode.size() == 1 && i!=acceptNodeNumber){
+                    ProductionForm aa = currentNode.iterator().next();
+                    if (j < terminatorSet.size() + 1  ){
+                        int locationInProductionFormList = productionFormList.indexOf(aa.removeSpot());
+                        lr0Table[i][j] = "r"  + locationInProductionFormList;
+                    }
+                }
+
+            }
+        }
+
+
+        return true;
+    }
 
 
     public void printDetail(){
@@ -210,10 +351,53 @@ public class LR0 {
         System.out.println("\n总共有" + productionFormSet.size()+"个产生式" );
         System.out.println("起始非终结符是：" + startProductionForm.getLeft());
         int i = 0;
-        for(ProductionForm p : productionFormSet){
+        for(ProductionForm p : productionFormList){
             System.out.print(++i +". ");
             System.out.println(p.getLeft() + "=>"+ p.getRightList());
         }
+        System.out.println("Lr0分析表是");
+        System.out.format("%-10s","");
+        for(String str:lr0TableHeadList)
+            System.out.format("%-10s",str);
+        System.out.println();
+        for(int p=0;p<INodeList.size();p++){
+            System.out.format("%-10s","I" +p);
+            for(int q=0;q<lr0TableHeadList.size();q++){
+                if(lr0Table[p][q] != null)
+                    System.out.format("%-10s",lr0Table[p][q]);
+                else
+                    System.out.format("%-10s","");
+            }
+
+            System.out.println("\t"+INodeList.get(p));
+        }
+
         System.out.println("要解析的串是" + tobeResolvedInput);
+
+        Boolean flag = true;
+        ParseStatus lastStatus = parseStatusArrayList.get(parseStatusArrayList.size() - 1);
+        String temp = lr0Table[lastStatus.getStatusStack().getLast()][lr0TableHeadList.indexOf(lastStatus.getLeftTokenStack().getFirst())];
+
+        if(temp !=null && temp.equals("acc")  ){
+            System.out.println("解析成功");
+        }else {
+            System.out.println("解析失败,该字符串不是文法的语言");
+            flag = false;
+        }
+        if(flag){
+            int j = 0;
+            for(ParseStatus p : parseStatusArrayList){
+                System.out.println("状态" + ++j +":");
+                System.out.println(p.getStatusStack() );
+                System.out.println(p.getSymbolStack()+"\t"+ p.getLeftTokenStack());
+            }
+            System.out.println("解析成功");
+        }
+
+
+
+
+
+
     }
 }

@@ -1,5 +1,6 @@
 ( ) i + - * /
-E E' T T' F
+S E E' T T' F
+S=>E
 E=>TE'
 E'=>+TE'|-TE'|@
 T=>FT'

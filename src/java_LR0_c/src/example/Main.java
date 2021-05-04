@@ -11,7 +11,7 @@ public class Main {
 
         G.out();
         try {
-            System.out.print(G.contains("baaaaaab"));
+            System.out.print(G.contains("bab"));
         } catch (Exception e) {
             e.printStackTrace();
         }

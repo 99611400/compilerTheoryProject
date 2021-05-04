@@ -1,5 +1,16 @@
+a b
+E S B
+E=>S
+S=>BB
+B=>aB|b
+end
+abc$
+
+
+
 ( ) i + - * /
-E E' T T' F
+S E E' T T' F
+S=>E
 E=>TE'
 E'=>+TE'|-TE'|@
 T=>FT'
@@ -8,5 +19,25 @@ F=>(E)|i|+i|-i
 end
 ((i+i*(i+i)))$
 
+
+
+a b c d
+S E A B
+S=>E
+E=>aA|bB
+A=>cA|d
+B=>cB|d
+end
+acd$
+
+
+
+
+id * + ( )
+S E
+S=>E
+E=>E+E|E*E|(E)|id
+end
+id+id$
 
 

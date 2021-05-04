@@ -28,7 +28,7 @@ public class StateNode {
     @Override
     public String toString() {
         return  "I" + originalState +
-                "---" + passBy +"I" + target;
+                "---" + passBy + "----->" +"I" + target;
     }
 
     @Override
